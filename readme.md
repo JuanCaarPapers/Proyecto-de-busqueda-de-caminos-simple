@@ -13,20 +13,20 @@ Este proyecto implementa un algoritmo de búsqueda de caminos en un mapa utiliza
 ## Tipos de Celda
 
 - **Normal**:
-- Representación: `.`
-- Costo de movimiento: `1`
+  - Representación: `.`
+  - Costo de movimiento: `1`
 
 - **Muro**:
-- Representación: `█`
-- Costo de movimiento: `infinito` (no transitable)
+  - Representación: `█`
+  - Costo de movimiento: `infinito` (no transitable)
 
 - **Peligrosa**:
-- Representación: `!!︎︎`
-- Costo de movimiento: `5`
+  - Representación: `!!︎︎`
+  - Costo de movimiento: `5`
 
 - **Vida**:
-- Representación: ``
-- Costo de movimiento: `0.5`
+  - Representación: ``
+  - Costo de movimiento: `0.5`
 
 ## Uso
 
