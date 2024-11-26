@@ -1,3 +1,4 @@
+import random
 from mapa import Mapa
 from jugador import Jugador
 from heuristica import distancia_octile
@@ -62,15 +63,26 @@ def reconstruir_camino(nodo):
         nodo = nodo.padre
     return camino[::-1]  # Invertir el camino
 
+def generar_posicion_aleatoria(mapa):
+    x = random.randint(0, mapa.ancho - 1)
+    y = random.randint(0, mapa.alto - 1)
+    return mapa.obtener_celda(x, y)
+
 def main():
-    # Crear el mapa y generar elementos
     mapa = Mapa()
 
-    # Imprimir el mapa inicial
+    while True:
+        inicio = generar_posicion_aleatoria(mapa)
+        destino = generar_posicion_aleatoria(mapa)
+        if distancia_octile(inicio, destino) >= 5:
+            break
+
+    mapa.inicio = inicio
+    mapa.destino = destino
+
     print("Mapa inicial:")
     mapa.imprimir_mapa()
 
-    # Crear el jugador
     jugador = Jugador(mapa.inicio)
 
     # Buscar el camino
